@@ -4,7 +4,9 @@ defineProps({
     type: String,
     required: true,
   },
-});
+})
+
+const appEnvironment = import.meta.env.VITE_APP_ENVIRONMENT
 </script>
 
 <template>
@@ -14,16 +16,9 @@ defineProps({
     </h1>
     <h3>
       You’ve successfully created a project with
-      <a
-        href="https://vitejs.dev/"
-        target="_blank"
-        rel="noopener"
-      >Vite</a> +
-      <a
-        href="https://vuejs.org/"
-        target="_blank"
-        rel="noopener"
-      >Vue 3</a>.
+      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
+      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      on {{ appEnvironment }}
     </h3>
   </div>
 </template>
@@ -45,6 +40,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;
